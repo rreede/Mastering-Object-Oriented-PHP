@@ -11,7 +11,7 @@ class Car {
     public $hasSunRoof = true;
 
     public function hello() {
-        return "beep";
+        return "beep I am a " . $this->comp . "and i am " . $this->color;
     }
 
 
@@ -26,6 +26,7 @@ $audi = new Car();
 
 // Access properties
 
+$bmw->color = "red";
 echo $bmw->color;
 echo $audi->hasSunRoof;
 
@@ -44,7 +45,7 @@ $car2 = new Car();
 
 echo $car1->hello();
 echo $car2->hello();
-
+echo $bmw-> hello();
 
 // Practise
 
@@ -52,18 +53,51 @@ class User {
     public $firstName;
     public $lastName;
 
-    public function hello($firstName, $lastName) {
-        echo "Hello" . $firstName . $lastName;
+    public function hello() {
+        echo "Hello" . $this->firstName . $this->lastName;
     }
 
 }
 
+
+
 $user1 = new User();
 $user2 = new User();
+$user3 = new User();
+
+$user3->firstName = "Jonnie";
+$user3->lastName = "Roe";
+
+$user3->hello();
 
 
 $user1->hello("Rene", "Renx");
 
 $user2->hello("Janet","Wood");
+
+class Movie {
+
+public $action;
+public $romance;
+public $comedy;
+
+    public function type($value) {
+        echo "$value";
+    }
+
+
+}
+
+
+$example = new Movie();
+
+$example->romance = true;
+
+echo $example-> romance;
+
+// Practise $this
+
+
+
 
 ?>
